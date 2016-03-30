@@ -1,0 +1,83 @@
+dschuermann@dschuermann-mint ~ $ cd Down
+bash: cd: Down: Datei oder Verzeichnis nicht gefunden
+dschuermann@dschuermann-mint ~ $ git clone https://github.com/redo24/Test.gitNach »Test« wird geklont
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 12 (delta 1), reused 11 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), done.
+Verbundenheit wird überprüft … Fertig.
+dschuermann@dschuermann-mint ~ $ cd Test/
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git remote add upstream https://github.com/sehbaoui/Test.git
+dschuermann@dschuermann-mint ~/Test $ git fetch upstream 
+Von https://github.com/sehbaoui/Test
+ * [neuer Branch]    master     -> upstream/master
+ * [neuer Branch]    sehbaoui-patch-1 -> upstream/sehbaoui-patch-1
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git check origin/master
+git: »check« ist kein Git-Befehl. Siehe »git --help«.
+
+Haben Sie eines von diesen gemeint?
+	checkout
+	check-attr
+	cherry
+dschuermann@dschuermann-mint ~/Test $ git checkout origin/master
+Note: checking out 'origin/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD ist jetzt bei e38622e... Merge pull request #1 from sehbaoui/master
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git checkout -b fix1
+Zu neuem Zweig »fix1« gewechselt
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ gedit 
+.git/             README.md         TestFromSehbaoui  
+dschuermann@dschuermann-mint ~/Test $ gedit TestFromSehbaoui 
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git add TestFromSehbaoui 
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ gedit TestFromSehbaoui 
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'dschuermann@dschuermann-mint.(none)')
+dschuermann@dschuermann-mint ~/Test $  git config user.email "dschuermann@detectomat.com"
+dschuermann@dschuermann-mint ~/Test $   git config  user.name "Daniel Schürmann"dschuermann@dschuermann-mint ~/Test $ git commit
+[fix1 4cda449] Bla
+ 1 file changed, 2 insertions(+)
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git commit -a 
+[fix1 3c4a09e] dfgsaeg
+ 1 file changed, 2 insertions(+)
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ gitk
+dschuermann@dschuermann-mint ~/Test $ git push origin fix1 
+Username for 'https://github.com': redo24
+Password for 'https://redo24@github.com': 
+Counting objects: 8, done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 576 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/redo24/Test.git
+ * [new branch]      fix1 -> fix1
+
